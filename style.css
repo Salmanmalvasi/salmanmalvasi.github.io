@@ -234,19 +234,7 @@ body {
     letter-spacing: 2px;
 }
 
-.hero-name::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: var(--fire-gradient);
-    background-size: 400% 400%;
-    border-radius: 3px;
-    animation: fire-gradient 3s ease infinite, fire-burst 2s ease-in-out infinite;
-    box-shadow: var(--neon-glow);
-}
+/* Removed the rectangle underline - keeping the name clean */
 
 @keyframes glow {
     from {
