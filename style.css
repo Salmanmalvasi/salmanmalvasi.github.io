@@ -66,24 +66,20 @@ body {
 }
 
 .logo {
-    font-size: 1.6rem;
-    font-weight: 700;
-    background: var(--fire-gradient);
-    background-size: 400% 400%;
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-decoration: none;
-    transition: all 0.3s ease;
-    animation: fire-gradient 3s ease infinite, neon-flicker 2s ease-in-out infinite;
-    position: relative;
-    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+    animation: pulse-glow 5s ease-in-out infinite;
 }
 
 .logo:hover {
-    transform: scale(1.05);
-    animation: fire-gradient 1s ease infinite, neon-flicker 0.5s ease-in-out infinite;
-    text-shadow: 0 0 20px rgba(255, 107, 53, 0.6);
+    transform: scale(1.1);
+    animation: pulse-glow 1s ease-in-out infinite;
 }
 
 .nav-list {
