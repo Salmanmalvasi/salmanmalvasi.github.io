@@ -46,7 +46,7 @@ Visit: [Your GitHub Pages URL will be here]
 
 ## 🚀 Deployment
 
-This portfolio is deployed using GitHub Pages. The main page is `index.html` and the app showcase is at `app.html`.
+This portfolio is deployed using GitHub Pages. The main page is `index.html` and the app showcase is at `studentcc-landing.html`.
 
 ---
 
