@@ -362,7 +362,6 @@ body {
     border-radius: 25px;
     padding: 2.5rem;
     text-align: center;
-    animation: gentle-float 4s ease-in-out infinite;
     box-shadow: var(--crazy-shadow);
     position: relative;
     overflow: hidden;
@@ -1508,11 +1507,3 @@ body {
     }
 }
 
-@keyframes gentle-float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
-}
