@@ -362,7 +362,7 @@ body {
     border-radius: 25px;
     padding: 2.5rem;
     text-align: center;
-    animation: crazy-float 6s ease-in-out infinite, fire-burst 4s ease-in-out infinite;
+    animation: gentle-float 4s ease-in-out infinite;
     box-shadow: var(--crazy-shadow);
     position: relative;
     overflow: hidden;
@@ -416,7 +416,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    animation: fire-gradient 3s ease infinite;
     box-shadow: var(--neon-glow);
     position: relative;
     overflow: hidden;
@@ -440,7 +439,6 @@ body {
 .app-preview-btn:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 15px 30px rgba(255, 107, 53, 0.8);
-    animation: fire-burst 0.5s ease-in-out;
 }
 
 .profile-avatar {
@@ -1507,5 +1505,14 @@ body {
     .social-link {
         width: 100%;
         justify-content: center;
+    }
+}
+
+@keyframes gentle-float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
     }
 }
