@@ -33,31 +33,58 @@
     <link rel="stylesheet" href="studentcc-landing.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-graduation-cap"></i>
-                <span>StudentCC</span>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#" class="nav-logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span>StudentCC</span>
+        </a>
+
+        <div class="nav-links-desktop">
+            <div class="nav-item dropdown">
+                <a href="#features" class="nav-link dropdown-toggle">Features <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="#features" class="dropdown-item">GPA & CGPA Toolkit</a>
+                    <a href="#features" class="dropdown-item">Attendance Tracking</a>
+                    <a href="#features" class="dropdown-item">Modern Theme System</a>
+                </div>
             </div>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#screenshots">Screenshots</a>
-                <a href="#tech">Tech Stack</a>
-                <a href="#feedback">Feedback</a>
-                <a href="#contact">Contact</a>
-                <a href="https://salmanmalvasi.github.io" target="_blank" class="portfolio-link">
-                    <i class="fas fa-user"></i>
-                    My Portfolio
-                </a>
-            </div>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <a href="#screenshots">Screenshots</a>
+            <a href="#tech">Tech Stack</a>
+            <a href="#feedback">Feedback</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+            <a href="https://salmanmalvasi.github.io" target="_blank" class="portfolio-link">
+                <i class="fas fa-user"></i>
+                <span class="portfolio-text">My Portfolio</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="nav-links-mobile">
+        <div class="nav-item dropdown">
+            <a href="#features" class="nav-link dropdown-toggle">Features <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu">
+                <a href="#features" class="dropdown-item">GPA & CGPA Toolkit</a>
+                <a href="#features" class="dropdown-item">Attendance Tracking</a>
+                <a href="#features" class="dropdown-item">Modern Theme System</a>
             </div>
         </div>
-    </nav>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#tech">Tech Stack</a>
+        <a href="#feedback">Feedback</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <div class="mobile-nav-bg"></div>
+</nav>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -79,6 +106,8 @@
                         <i class="fab fa-google-play"></i>
                         Download APK
                     </a>
+                    <br>
+                    <br>
                     <a href="#features" class="download-btn secondary">
                         <i class="fas fa-info-circle"></i>
                         Learn More
@@ -106,119 +135,119 @@
     </section>
 
     <!-- Update Notice Section -->
-    <section class="update-notice">
-        <div class="container">
-            <div class="update-content">
-                <div class="update-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h2>🎉 Latest Update: Version 1.1.0</h2>
-                <p class="update-description">
-                    <strong>Major Update with New Features!</strong> Enhanced UI, holiday marking system, Saturday working day toggle, 
-                    improved CGPA toggle, and bug fixes. Download the latest version now for the best experience!
-                </p>
-                <div class="update-actions">
-                    <a href="StudentCC_1.1.0.apk" class="download-btn primary" download>
-                        <i class="fas fa-download"></i>
-                        Download Latest Version
-                    </a>
-                    <span class="version-info">Version 1.1.0 (51.2 MB)</span>
-                </div>
+    <section id="latest-update" class="latest-update-section">
+    <div class="container">
+        <div class="update-header">
+            <div class="update-icon">
+                <i class="fas fa-magic"></i> </div>
+            <h2 class="section-title">✨ StudentCC Version 1.1.0 is Here!</h2>
+            <p class="update-description">
+                Experience the all-new **StudentCC 1.1.0** packed with exciting features and a fresh look.
+                We've listened to your feedback to deliver the best academic companion yet.
+            </p>
+            <div class="download-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p><strong>Important:</strong> Please uninstall any previous versions of the VIT Student app to avoid installation conflicts before downloading.</p>
             </div>
+            <a href="StudentCC_1.1.0.apk" class="download-btn primary large" download>
+                <i class="fas fa-cloud-download-alt"></i> Download Latest Version (51.2 MB)
+            </a>
         </div>
-    </section>
 
-    <!-- What's New Section -->
-    <section class="whats-new">
-        <div class="container">
-            <h2 class="section-title">🚀 What's New in Version 1.1.0</h2>
-            <div class="new-features-grid">
-                <div class="new-feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Enhanced UI</h3>
-                    <p>Completely redesigned interface with modern Material Design 3, improved color schemes, and better user experience.</p>
-                </div>
-                <div class="new-feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h3>Holiday Marking</h3>
-                    <p>Mark any day as a holiday to exclude it from attendance calculations and academic planning.</p>
-                </div>
-                <div class="new-feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3>Saturday Working Day Toggle</h3>
-                    <p>Flexible option to mark Saturdays as working days when needed for special schedules.</p>
-                </div>
-                <div class="new-feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-toggle-on"></i>
-                    </div>
-                    <h3>Improved CGPA Toggle</h3>
-                    <p>Enhanced CGPA calculation toggle with better accuracy and user control.</p>
-                </div>
-                <div class="new-feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-bug-slash"></i>
-                    </div>
-                    <h3>Bug Fixes</h3>
-                    <p>Multiple bug fixes and performance improvements for a smoother app experience.</p>
-                </div>
+        <div class="divider"></div> <h2 class="whats-new-title">🚀 What's Inside This Update:</h2>
+        <div class="new-features-grid">
+            <div class="new-feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-desktop"></i> </div>
+                <h3>Sleek UI Redesign</h3>
+                <p>A completely overhauled interface with **Material Design 3**, improved color schemes, and enhanced user experience.</p>
+            </div>
+            <div class="new-feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-calendar-alt"></i> </div>
+                <h3>Holiday & Day Controls</h3>
+                <p>Intelligently mark holidays and toggle Saturday working days for precise attendance tracking.</p>
+            </div>
+            <div class="new-feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-pie"></i> </div>
+                <h3>Refined GPA & CGPA</h3>
+                <p>Improved **CGPA calculation toggle** and more accurate GPA predictions for better academic planning.</p>
+            </div>
+            <div class="new-feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bug"></i> </div>
+                <h3>Performance Boost & Fixes</h3>
+                <p>Multiple **bug fixes** and significant performance improvements for a smoother and more reliable app experience.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">Why Choose StudentCC?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3>Advanced GPA Calculator</h3>
+<!-- Features Section -->
+<section id="features" class="features">
+    <div class="container">
+        <h2 class="section-title">Why Choose StudentCC?</h2>
+        <p class="section-subtitle">Everything you need for your academic journey at VIT Chennai, all in one place.</p>
+        <div class="features-grid">
+            <!-- Feature 1: GPA & CGPA Toolkit -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-calculator"></i>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>CGPA Estimator (BRAND NEW)</h3>
+                <h3>GPA & CGPA Toolkit</h3>
+                <p>Easily calculate your GPA for the semester and get an accurate estimate of your overall CGPA with our advanced tools.</p>
+            </div>
+
+            <!-- Feature 2: Enhanced Attendance Tracking -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-user-check"></i>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Enhanced Attendance Tracking</h3>
+                <h3>Enhanced Attendance Tracking</h3>
+                <p>Never miss a class. Our smart attendance tracker helps you stay on top of your requirements with ease.</p>
+            </div>
+
+            <!-- Feature 3: Modern Theme System -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-palette"></i>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Modern Theme System</h3>
-                    <p>6 custom themes (Default, Red, Blue, Purple, Green, Black) with dark/light mode and dynamic color system using Material Design 3.</p>
+                <h3>Modern Theme System</h3>
+                <p>Customize your experience with 6 beautiful themes, complete with dark/light modes and dynamic colors.</p>
+            </div>
+
+            <!-- Feature 4: Enhanced Captcha System -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <h3>Firebase Integration</h3>
-                    <p>Analytics tracking, user engagement monitoring, performance monitoring, and foundation for push notifications and cloud features.</p>
+                <h3>Enhanced Captcha System</h3>
+                <p>Our robust, multi-stage OCR captcha solver ensures you can access VTOP quickly and reliably every time.</p>
+            </div>
+
+            <!-- Feature 5: Offline Accessibility -->
+            <div class="feature-card">
+    <div class="feature-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em">
+            <path d="M12 3C7.47 3 3.48 4.79 1 7.64l1.41 1.41c2.1-2.43 5.23-3.8 8.59-3.8s6.49 1.37 8.59 3.8l1.41-1.41C20.52 4.79 16.53 3 12 3zm0 4c-3.33 0-6.18 1.4-8.08 3.59l1.41 1.41C6.98 10.38 9.33 9 12 9s5.02 1.38 6.67 3l1.41-1.41C18.18 8.4 15.33 7 12 7zm0 4c-1.9 0-3.6.84-4.82 2.18l1.41 1.41C9.53 13.67 10.7 13 12 13s2.47.67 3.41 1.59l1.41-1.41C15.6 11.84 13.9 11 12 11zm10.95 2.46l-1.41-1.41C20.17 13.42 18.27 13 16.24 13c-.24 0-.48.02-.72.05l-2.43 2.43c.9.29 1.86.46 2.86.46 2.37 0 4.54-.83 6.25-2.22l.75.75L24 16.05l-1.05-1.59zM1 16.05l11 11L13.41 24l-1.41-1.41L1.41 12.05 1 12.46l1.05 1.59L1 16.05zm15.24-4.05c-2.26 0-4.32.74-5.96 2.01l5.96 5.96L23 18.05l-1.41-1.41c-1.54-1.54-3.58-2.59-5.9-2.59z"/>
+        </svg>
+    </div>
+    <h3>Offline Accessibility</h3>
+    <p>Access your timetable, attendance records, and other essential data even when you're not connected to the internet.</p>
+</div>
+
+            <!-- Feature 6: Secure & Private -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Enhanced Captcha System</h3>
-                    <p>Multi-stage OCR processing with 4 different image preprocessing attempts, contrast enhancement, grayscale conversion, and color inversion for better accuracy.</p>
-                </div>
+                <h3>Secure & Private</h3>
+                <p>Your data is stored securely on your device, ensuring your academic information remains private and confidential.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Screenshots Section -->
     <section id="screenshots" class="screenshots">
@@ -253,13 +282,7 @@
                     <h3>Java</h3>
                     <p>Core Android development with modern practices, Room database, and Material Design 3 implementation.</p>
                 </div>
-                <div class="tech-card">
-                    <div class="tech-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <h3>Firebase</h3>
-                    <p>Analytics tracking, user engagement monitoring, performance monitoring, and cloud capabilities.</p>
-                </div>
+                
                 <div class="tech-card">
                     <div class="tech-icon">
                         <i class="fab fa-android"></i>
