@@ -83,8 +83,31 @@
         <a href="#feedback">Feedback</a>
         <a href="#contact">Contact</a>
     </div>
+
     <div class="mobile-nav-bg"></div>
 </nav>
+
+<!-- Firebase Integration -->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyB6w3h14hduch_UnrVtHncHqFNG1-wC6m8",
+    authDomain: "studentcc-web.firebaseapp.com",
+    projectId: "studentcc-web",
+    storageBucket: "studentcc-web.firebasestorage.app",
+    messagingSenderId: "119926305305",
+    appId: "1:119926305305:web:19a67ae3aa7722c6c0f088",
+    measurementId: "G-D2237S6ETM"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 
     <!-- Hero Section -->
     <section class="hero">
