@@ -908,3 +908,124 @@ body {
         transform: translateX(0);
     }
 }
+
+/* ============================================= */
+/* == CREDITS SECTION == */
+/* ============================================= */
+.credits {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.credits-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.credits-card {
+    background: var(--bg-light);
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-medium);
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.credits-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.credits-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.credits-card h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.credits-card p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.credits-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.credits-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.credits-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.credits-note {
+    background: rgba(0, 128, 128, 0.1);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.credits-note p {
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: 0;
+}
+
+.credits-note i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+/* Mobile Responsiveness for Credits */
+@media (max-width: 768px) {
+    .credits {
+        padding: 3rem 0;
+    }
+    
+    .credits-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .credits-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .credits-card p {
+        font-size: 1rem;
+    }
+    
+    .credits-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .credits-link {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}

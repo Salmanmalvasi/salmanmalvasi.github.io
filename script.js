@@ -1,4 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Dark mode toggle functionality
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    
+    // Check for saved theme preference or default to dark mode
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    body.setAttribute('data-theme', currentTheme);
+    
+    // Update toggle icon based on current theme
+    const toggleIcon = darkModeToggle.querySelector('i');
+    if (currentTheme === 'light') {
+        toggleIcon.className = 'fas fa-sun';
+    } else {
+        toggleIcon.className = 'fas fa-moon';
+    }
+    
+    // Dark mode toggle event listener
+    darkModeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        // Update theme
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        // Update icon
+        const toggleIcon = darkModeToggle.querySelector('i');
+        if (newTheme === 'light') {
+            toggleIcon.className = 'fas fa-sun';
+        } else {
+            toggleIcon.className = 'fas fa-moon';
+        }
+        
+        // Add transition effect
+        body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+        setTimeout(() => {
+            body.style.transition = '';
+        }, 300);
+    });
+
     // Mobile navigation toggle
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav');
@@ -181,11 +221,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     if (header) {
         window.addEventListener('scroll', () => {
+            const currentTheme = body.getAttribute('data-theme');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(10, 10, 10, 0.98)';
+                if (currentTheme === 'light') {
+                    header.style.background = 'rgba(255, 255, 255, 0.98)';
+                } else {
+                    header.style.background = 'rgba(10, 10, 10, 0.98)';
+                }
                 header.style.backdropFilter = 'blur(20px)';
             } else {
-                header.style.background = 'rgba(10, 10, 10, 0.95)';
+                if (currentTheme === 'light') {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                } else {
+                    header.style.background = 'rgba(10, 10, 10, 0.95)';
+                }
                 header.style.backdropFilter = 'blur(10px)';
             }
         });
@@ -340,6 +389,83 @@ document.addEventListener('DOMContentLoaded', () => {
     // Working Contact Form with EmailJS
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
+        // Form validation
+        const inputs = contactForm.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', validateField);
+            input.addEventListener('input', clearError);
+        });
+
+        function validateField(e) {
+            const field = e.target;
+            const value = field.value.trim();
+            const fieldName = field.name;
+            
+            // Remove existing error
+            clearError(e);
+            
+            let isValid = true;
+            let errorMessage = '';
+            
+            switch(fieldName) {
+                case 'name':
+                    if (value.length < 2) {
+                        isValid = false;
+                        errorMessage = 'Name must be at least 2 characters long';
+                    }
+                    break;
+                case 'email':
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        isValid = false;
+                        errorMessage = 'Please enter a valid email address';
+                    }
+                    break;
+                case 'message':
+                    if (value.length < 10) {
+                        isValid = false;
+                        errorMessage = 'Message must be at least 10 characters long';
+                    }
+                    break;
+            }
+            
+            if (!isValid) {
+                showFieldError(field, errorMessage);
+            }
+            
+            return isValid;
+        }
+        
+        function clearError(e) {
+            const field = e.target;
+            const errorElement = field.parentNode.querySelector('.field-error');
+            if (errorElement) {
+                errorElement.remove();
+            }
+            field.style.borderColor = '';
+        }
+        
+        function showFieldError(field, message) {
+            const errorElement = document.createElement('div');
+            errorElement.className = 'field-error';
+            errorElement.textContent = message;
+            errorElement.style.color = 'var(--danger-color)';
+            errorElement.style.fontSize = '0.8rem';
+            errorElement.style.marginTop = '0.25rem';
+            field.parentNode.appendChild(errorElement);
+            field.style.borderColor = 'var(--danger-color)';
+        }
+        
+        function validateForm() {
+            let isFormValid = true;
+            inputs.forEach(input => {
+                if (!validateField({ target: input })) {
+                    isFormValid = false;
+                }
+            });
+            return isFormValid;
+        }
+
         // Load EmailJS
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
@@ -351,6 +477,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
+                
+                // Validate form before submission
+                if (!validateForm()) {
+                    showNotification('Please fix the errors in the form before submitting.', 'error');
+                    return;
+                }
                 
                 // Add loading state
                 const submitBtn = contactForm.querySelector('.submit-button');
@@ -511,6 +643,57 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         });
+    }
+
+    // Hero name typewriter effect
+    const heroNameText = document.getElementById('heroNameText');
+    if (heroNameText) {
+        const texts = [
+            'Salman Malvasi',
+            'Developer',
+            'Android Dev',
+            'iOS Dev',
+            'Student',
+            'Tech Enthusiast',
+            'Salman Malvasi'
+        ];
+        
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
+        
+        function typeWriter() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                // Deleting characters
+                heroNameText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50; // Faster when deleting
+            } else {
+                // Typing characters
+                heroNameText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 100; // Normal speed when typing
+            }
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                // Finished typing, wait before deleting
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                // Finished deleting, move to next text
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typeSpeed = 500; // Pause before typing next text
+            }
+            
+            setTimeout(typeWriter, typeSpeed);
+        }
+        
+        // Start typewriter effect after a delay
+        setTimeout(typeWriter, 2000);
     }
 
     // Call initialization
